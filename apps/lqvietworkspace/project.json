@@ -2,25 +2,32 @@
   "name": "lqvietworkspace",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "ecom",
   "sourceRoot": "apps/lqvietworkspace/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/lqvietworkspace",
         "index": "apps/lqvietworkspace/src/index.html",
         "browser": "apps/lqvietworkspace/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/lqvietworkspace/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/lqvietworkspace/src/favicon.ico",
           "apps/lqvietworkspace/src/assets"
         ],
-        "styles": ["apps/lqvietworkspace/src/styles.scss"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/lqvietworkspace/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,7 +77,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/lqvietworkspace/jest.config.ts"
       }
