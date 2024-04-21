@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-category',
+  selector: 'lib-product',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './category.component.html',
-  styleUrl: './category.component.scss',
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.scss',
 })
-export class CategoryComponent {}
+export class ProductComponent {}
