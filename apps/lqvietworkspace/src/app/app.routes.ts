@@ -29,4 +29,9 @@ export const appRoutes: Route[] = [
     //   animation: 'CategoryPage',
     // },
   },
+  {
+    path: 'cart',
+    loadComponent: () => import('@org/cart')
+      .then((m) => m.CartComponent),
+  }
 ];
