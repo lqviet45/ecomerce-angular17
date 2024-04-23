@@ -5,11 +5,14 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item [routerLink]="['product']">All product</a>
       @for (cat of categories$ | async; track $index) {
         <ng-container>
-          <a mat-list-item [routerLink]="['category', cat]">{{cat}}</a>
+          <a mat-list-item [routerLink]="['product', cat]">{{cat}}</a>
         </ng-container>
       }
+      <a mat-list-item [routerLink]="['cart']">View cart</a>
+      <a mat-list-item [routerLink]="['orders']">View Order</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

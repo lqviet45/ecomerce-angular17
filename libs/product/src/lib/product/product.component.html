@@ -1,2 +1,26 @@
 <h1>{{ categoryName }}</h1>
 <hr>
+
+@for (product of product$ | async; track product.id) {
+  <ng-container>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{product.title}}</mat-card-title>
+        <mat-card-subtitle>{{product.price}}$</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-md-image
+           src="{{product.image}}"
+           alt="{{product.title}}"
+      >
+      <mat-card-content>
+        <p>{{product.description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Buy Now</button>
+        <button mat-flat-button color="accent">Add To Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+}
+
