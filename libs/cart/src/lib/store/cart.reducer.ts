@@ -3,13 +3,11 @@ import { createReducer, on } from '@ngrx/store';
 
 export interface CartState {
   carts: Cart[];
-  //totalPrice: number;
   error: string;
 }
 
 export const initialCartState: CartState = {
   carts: [],
-  //totalPrice: 0,
   //loading: false,
   error: ''
 };

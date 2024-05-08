@@ -3,8 +3,7 @@ import { productReducer, ProductState } from './product.reducer';
 
 const productFeatureKey = 'product';
 
-export const selectProductState =
-  createFeatureSelector<ProductState>(productFeatureKey);
+export const selectProductState = createFeatureSelector<ProductState>(productFeatureKey);
 //(state: CategoryState) => state;
 
 export const selectProducts = createSelector(

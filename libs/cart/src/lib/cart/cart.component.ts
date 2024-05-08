@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { cartActions } from '../store/cart.action';
+import { selectCarts } from '../store/cart.selector';
 
 @Component({
   selector: 'lib-cart',
@@ -8,4 +11,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
-export class CartComponent {}
+export class CartComponent implements OnInit {
+  cart$ = this.store.select(selectCarts);
+
+  constructor(private readonly store: Store) {
+  }
+
+  ngOnInit() {
+    this.store.dispatch(cartActions.loadCart());
+  }
+}
